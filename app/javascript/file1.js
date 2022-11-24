@@ -1,0 +1,1 @@
+console.log('imported from index.js')
