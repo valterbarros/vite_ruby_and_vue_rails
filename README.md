@@ -7,7 +7,7 @@
 ```
 docker build -t vite-ruby .
 docker run --name testviteruby -v ${PWD}:/app -it -p 4000:4000 vite-ruby /bin/bash
-sh build.sh
+bash build.sh
 
 docker exec -it testviteruby /bin/bash
 sh build-front.sh
