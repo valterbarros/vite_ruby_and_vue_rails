@@ -6,7 +6,11 @@
   "production": {
     "autoBuild": true,
     "publicOutputDir": "vite",
-    "port": 3036
+    "port": 3036,
+    "assetHost": "http://cdn-file-development:4000"
+  },
+  "development": {
+    "assetHost": "http://cdn-file-production:4000"
   },
   "test": {
     "autoBuild": true,

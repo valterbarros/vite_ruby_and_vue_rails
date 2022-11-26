@@ -1,10 +1,13 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path';
 import RubyPlugin from 'vite-plugin-ruby'
 import vue from '@vitejs/plugin-vue'
 import { splitVendorChunkPlugin } from 'vite'
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default defineConfig({
-  // base: 'http://127.0.0.1:4000',
+  base: '/vite',
   plugins: [
     // splitVendorChunkPlugin({}),
     RubyPlugin(),
@@ -22,5 +25,11 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+  resolve: {
+    alias: {
+      // As tavola alias
+      '@views': resolve(__dirname, 'app/javascript/views'),
+    },
+  },
 })

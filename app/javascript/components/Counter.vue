@@ -11,8 +11,8 @@ import { defineComponent, onMounted, ref } from 'vue'
 import { INITIAL_COUNT, ID } from '~/utils.js'
 // Force vite to create a chunk because this worker is big file
 import pdfJsWorkerUrl from 'pdfjs-dist/legacy/build/pdf.worker.min?url';
-const PDFJSWorker = new Worker(pdfJsWorkerUrl, { type: 'classic' });
-console.log(PDFJSWorker);
+// const PDFJSWorker = new Worker(pdfJsWorkerUrl, { type: 'classic' });
+// console.log(PDFJSWorker);
 
 export default defineComponent({
   setup() {
