@@ -5,9 +5,11 @@ import vue from '@vitejs/plugin-vue'
 import { splitVendorChunkPlugin } from 'vite'
 
 const isProduction = process.env.NODE_ENV === 'production';
+// Set asset host to vite ruby
+process.env.CUSTOM_VITE_ASSET_HOST ? process.env.VITE_RUBY_ASSET_HOST = process.env.CUSTOM_VITE_ASSET_HOST : null;
 
 export default defineConfig({
-  base: '/vite',
+  // base: '/vite',
   plugins: [
     // splitVendorChunkPlugin({}),
     RubyPlugin(),

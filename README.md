@@ -5,14 +5,28 @@
 # Run
 
 ```
-docker build -t vite-ruby .
-docker run --name testviteruby -v ${PWD}:/app -it -p 4000:4000 vite-ruby /bin/bash
+
+docker compose build
+docker compose up
+
+# frontend build
+
+docker exec -it webapp /bin/sh
+bash build-front.sh
+
+# open new tab and run backend build
+docker exec -it webapp /bin/sh
 bash build.sh
 
-docker exec -it testviteruby /bin/bash
-sh build-front.sh
+```
+> open http://localhost:4001 on browser
+
+> Assets should be served from rails asset_host config/environments/development.rb:37(http://127.0.0.1:4001/)
+
+# Running tests
+
+> These assets try combinations to pass host to vite_ruby.
 
 ```
-> open http://localhost:4000 on browser
-
-> Assets should be served from rails asset_host config/environments/development.rb:37(http://127.0.0.1:4000/)
+/bin/rails test test/vite_executable.rb
+```

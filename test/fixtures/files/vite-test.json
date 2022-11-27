@@ -5,8 +5,9 @@
   },
   "production": {
     "autoBuild": true,
-    "publicOutputDir": "vite",
-    "port": 3036
+    "publicOutputDir": "vite-rails-test",
+    "port": 3036,
+    "assetHost": "http://localhost:5000"
   },
   "development": {
   },

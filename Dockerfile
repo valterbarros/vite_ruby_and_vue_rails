@@ -1,10 +1,7 @@
 FROM ruby:3.0.3-buster AS core
 WORKDIR /app
 COPY . .
-# RUN yarn install --production
-# RUN npm create astro@latest
-# CMD ["node"]
-EXPOSE 4000
+EXPOSE 4001
 
 RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
   && apt-get update \
@@ -31,4 +28,14 @@ RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
 
 RUN gem install bundler
 
-RUN bundle install && bundle exec vite install
+ADD package.json /tmp/package.json
+RUN cd /tmp && npm install
+
+RUN bundle install
+
+# FROM cypress/base AS cypress
+# WORKDIR /app
+# COPY . .
+# RUN npm install
+# RUN npm install cypress
+# RUN $(npm bin)/cypress run
