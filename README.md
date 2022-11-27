@@ -22,7 +22,8 @@ bash build.sh
 ```
 > open http://localhost:4001 on browser
 
-> Assets should be served from rails asset_host config/environments/development.rb:37(http://127.0.0.1:4001/)
+> Rails assets(vite_javascript_tag) should be served from rails asset_host config/environments/production.rb:37(http://localhost:4001)
+> vite assets should be served from page_host/vite/
 
 # Running tests
 
