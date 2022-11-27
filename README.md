@@ -5,17 +5,18 @@
 # Run
 
 ```
+# container
 
 docker compose build
 docker compose up
 
 # frontend build
 
-docker exec -it webapp /bin/sh
+docker exec -it webapp /bin/bash
 bash build-front.sh
 
 # open new tab and run backend build
-docker exec -it webapp /bin/sh
+docker exec -it webapp /bin/bash
 bash build.sh
 
 ```
