@@ -13,11 +13,12 @@ docker compose up
 # frontend build
 
 docker exec -it webapp /bin/bash
-bash build-front.sh
+./build-front.sh
 
 # open new tab and run backend build
 docker exec -it webapp /bin/bash
-bash build.sh
+bin/rails credentials:edit # configure it to run rails s in production mode
+./build.sh
 
 ```
 > open http://localhost:4001 on browser

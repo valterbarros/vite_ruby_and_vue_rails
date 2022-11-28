@@ -5,6 +5,7 @@
 
 # npm install
 
+cp -a /tmp/node_modules /app/
 # front served from other cdn host see config/production.rb
 RAILS_ENV=production NODE_ENV=development bin/vite build --clean --mode=production --debug
 
