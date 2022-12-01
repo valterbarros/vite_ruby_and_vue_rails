@@ -29,7 +29,7 @@ bin/rails credentials:edit # configure it to run rails s in production mode
 
 # Running tests
 
-> These assets try combinations to pass host to vite_ruby.
+> These tests try combinations to pass host to vite_ruby.
 
 ```
 /bin/rails test test/vite_executable.rb
