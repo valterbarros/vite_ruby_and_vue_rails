@@ -34,7 +34,7 @@ Rails.application.configure do
   end
 
   # config CDN
-  config.action_controller.asset_host = 'http://127.0.0.1:4000/'
+  config.action_controller.asset_host = ENV['CDN_HOST']
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local

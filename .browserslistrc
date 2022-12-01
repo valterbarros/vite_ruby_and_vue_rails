@@ -1,0 +1,12 @@
+# Browsers that we support:
+# https://browsersl.ist/#q=defaults%2C+not+safari+TP%2C+%3E+2%25%2C+Chrome+%3E%3D+55%2C+Samsung+%3E%3D7%2C+Firefox+%3E%3D+50%2C+Opera+%3E%3D+48%2C+IE+11%2C+supports+es5
+
+defaults
+> 2%
+Firefox >= 50
+Chrome >= 55
+Samsung >= 7
+Opera >= 48
+not safari TP
+not dead
+ie>=11

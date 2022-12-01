@@ -1,8 +1,8 @@
-import { createWebHistory, createWebHashHistory, createRouter } from 'vue-router'
+import VueRouter from 'vue-router'
 // import Page from '~/views/Page.vue'
 
-const router = createRouter({
-  history: createWebHashHistory(),
+const router = new VueRouter({
+  mode: 'history',
   routes: [
     { path: '/route', component: () => import('@views/Page.vue'), name: 'root_path' },
   ]

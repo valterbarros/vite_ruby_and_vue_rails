@@ -3,12 +3,16 @@
     layout
     <router-view />
 
-    <router-link :to="{ name: 'root_path' }"> go to page 1 </router-link>
+    <router-link to="/route"> go to page 1 </router-link>
   </div>
 </template>
 
-<script setup>
+<script>
+import { defineComponent } from 'vue';
 
+  defineComponent({
+    setup(){}
+  });
 </script>
 
 <style>

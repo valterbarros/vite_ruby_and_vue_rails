@@ -42,6 +42,7 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem 'vite_plugin_legacy', '~> 3.0.2'
+gem 'haml', '~> 5.1.2'
 gem 'vite_rails', '3.0.12'
 gem 'pry-byebug', '~> 3.9.0'
 

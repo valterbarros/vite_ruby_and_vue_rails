@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "application#index"
   # match "*", to: "application#index", format: false, via: :get
-  get '/*path', to: 'application#index' 
+  # get '*get_assets', to: 'application#get_assets'
+  get '/*path', to: 'application#index'
 end

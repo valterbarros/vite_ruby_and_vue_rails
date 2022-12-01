@@ -1,0 +1,14 @@
+-# https://gist.github.com/samthor/64b114e4a4f539915a95b91ffd340acc
+
+- asset_type = :javascript
+- legacy_name = 'application'.sub(/(\..+)|$/, '-legacy\1')
+- legacy_js_path = vite_asset_path(legacy_name, type: asset_type)
+
+// This script loads legacy chunk when browser not supports dynamic-import but support esm
+// Extracted from @vitejs/plugin-legacy
+
+%script{type: "module", nonce: "#{content_security_policy_nonce}"}
+  try{import("_").catch(()=>1);}catch(e){}window.__vite_is_dynamic_import_support=true;
+
+%script{type: "module", nonce: "#{content_security_policy_nonce}"}
+  !function(){if(window.__vite_is_dynamic_import_support)return;console.warn("vite: loading legacy build because dynamic import is unsupported, syntax error above should be ignored");var e=document.querySelector('script[src*="polyfills-legacy"]'),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import('#{ j(legacy_js_path).html_safe }')},document.body.appendChild(n)}();

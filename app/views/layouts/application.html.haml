@@ -1,0 +1,35 @@
+!!!
+
+%html
+  %head
+    %title Ruby and Vue
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta(name="ROBOTS" content="NOFOLLOW")
+
+    = render 'layouts/modern_poyfill' if Rails.env.production?
+
+    = csrf_meta_tags
+
+    // HMR
+    = vite_client_tag if Rails.env.development?
+
+    = vite_javascript_tag 'application', nonce: true
+
+    = render 'layouts/vite_legacy_dynamic_import_check' if Rails.env.production?
+    %script
+      / __dynamic_base__ will be the base from all vite assets, thanks to vite-plugin-dynamic-base 
+      window.__dynamic_base__ = "#{Rails.application&.config&.action_controller&.asset_host}#{ViteRuby.config.public_output_dir}"
+
+  %body
+    -# = yield
+
+    = render 'layouts/vite_legacy_body_missing_inline_script' if Rails.env.production?
+
+    = vite_legacy_javascript_tag 'application' if Rails.env.production?
+
+    This is application
+    %p.text image with rails tag:
+    %br
+    = vite_image_tag 'images/logo-clicksign-white.svg'
+    %hr
+    %div#app

@@ -4,11 +4,14 @@
     "watchAdditionalPaths": []
   },
   "production": {
-    "autoBuild": true,
-    "publicOutputDir": "vite",
+    "autoBuild": false,
+    "publicOutputDir": "netlify/vite",
     "port": 3036
   },
   "development": {
+    "autoBuild": false,
+    "publicOutputDir": "netlify/vite",
+    "port": 3036
   },
   "test": {
     "autoBuild": true,

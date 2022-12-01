@@ -43,3 +43,7 @@ node_modules
 node_modules
 
 .DS_Store
+
+public/nginx*
+public/netlify*
+public/vite*
